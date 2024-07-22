@@ -21,10 +21,11 @@
 */
 
 #include <conio.h>
+#include <unistd.h>
 
 #include "fairuse.h"
 
-void disclaim_page()
+void fairuse_page()
 {
    bgcolor(COLOR_BLACK);
    clrscr();                                                                                                                                                                                                                                                                                             
@@ -33,7 +34,7 @@ void disclaim_page()
    textcolor(COLOR_GRAY3);
    cputs("                         F A I R   U S E   P O L I C Y\r\n\r\n\r\n\r\n\r\n");
    cputs("      The Traveller game in all forms is owned by Far Future Enterprises.\r\n\r\n");
-   cputs("                 Copyright 1977 - 2022 Far Future Enterprises. \r\n\r\n\r\n");
+   cputs("                 Copyright 1977 - 2023 Far Future Enterprises. \r\n\r\n\r\n");
    cputs("     Traveller is a registered  trademark  of  Far Future Enterprises.  Far\r\n\r\n");
    cputs("     Future permits short programs,  web sites and  fanzines for this game,\r\n\r\n");
    cputs("     provided it contains this notice,  that  Far  Future  is notified, and\r\n\r\n");
@@ -52,8 +53,9 @@ void disclaim_page()
    cputs("     TRAVELLER");
 
    revers(1);
-   cputsxy(35,50, "press any key");
+   cputsxy(25,50, "exiting jumpspace. please press a key.");
    revers(0);
 
+//   sleep(2);
    cgetc();
 }

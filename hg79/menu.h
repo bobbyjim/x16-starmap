@@ -1,7 +1,29 @@
+/*
+
+    High Guard 1979: a starship construction program
+    Copyright (C) 2022 Robert Eaglestone
+
+    This file is part of High Guard 1.
+
+    High Guard 1 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    High Guard 1  is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with High Guard 1 .  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+
 #ifndef _MENU_H_
 #define _MENU_H_
 
-
-void menu_drawBox(unsigned char x, unsigned char y, unsigned char length, unsigned char width);
+void menu_drawPanel( int x, int y, int width, int height, char* label, char* content );
+void menu_drawIntersection( int x, int y, int width, int height );
 
 #endif

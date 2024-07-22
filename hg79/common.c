@@ -29,31 +29,7 @@
 #define  CHARACTER_MAP_ADDRESS         CHARACTER_MAP_ADDRESS_R39
 #define  LOAD_SECONDARY_ADDRESS        LOAD_SECONDARY_ADDRESS_R39
 
-#define     REVERSE_ON      0x12
-#define     REVERSE_OFF     0x92
-
-#define     CH_DOWN         17
-#define     CH_LEFT         157
-#define     CH_REVERSE_ON   18
-#define     CH_REVERSE_OFF  146
-#define     CH_FILL_ANGLE   169
-
-char petsciiLogo[] = {
-    CH_LIGHTBLUE, CH_REVERSE_ON, CH_FILL_ANGLE, ' ', ' ', CH_LEFT, CH_LEFT, CH_LEFT, CH_DOWN,
-    ' ', CH_REVERSE_OFF, ' ', ' ', CH_REVERSE_ON, ' ', CH_REVERSE_OFF, CH_FILL_ANGLE, CH_LEFT, CH_LEFT, CH_LEFT, CH_LEFT, CH_LEFT, CH_DOWN,
-    CH_REVERSE_ON, ' ', CH_REVERSE_OFF, ' ', ' ', CH_RED, CH_REVERSE_ON, 163, 223, CH_LEFT, CH_LEFT, CH_LEFT, CH_LEFT, CH_LEFT, CH_DOWN,
-    CH_LIGHTBLUE, REVERSE_OFF, 223, REVERSE_ON, ' ', ' ', REVERSE_OFF
-};
-
-void logo(unsigned char x, unsigned char y)
-{
-    int i;
-    gotoxy(x,y);
-    for(i=0; i<45; ++i)
-          cbm_k_bsout(petsciiLogo[i]);
-}
-
-void clearMainArea()
+void common_clearMainArea()
 {
    uint8_t y;
    for(y=11; y<60; ++y)
@@ -62,26 +38,26 @@ void clearMainArea()
    }
 }
 
-void redline()
+void common_redline()
 {
    textcolor(COLOR_RED);
    chline(80);
 }
 
-void greenline()
+void common_greenline()
 {
    textcolor(COLOR_GREEN);
    chline(80);
 }
 
-void titleLine()
+void common_titleLine()
 {
     textcolor(COLOR_RED);
     chlinexy(0,TITLE_LINE_Y,80);
 }
 
 
-void statusLine()
+void common_statusLine()
 {
    textcolor(COLOR_GRAY2);
    chlinexy(0,STATUS_LINE_Y,80);
@@ -89,10 +65,10 @@ void statusLine()
    cputsxy(22,STATUS_LINE_Y," t r a v e l l e r   h i g h   g u a r d   5 ");
 }
 
-void toDefaultColor()
-{
-   textcolor(COLOR_LIGHTBLUE);
-}
+//void common_toDefaultColor()
+//{
+  // textcolor(COLOR_LIGHTBLUE);
+//}
 
 void common_loadCharacterSet(char* filename)
 {

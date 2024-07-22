@@ -1,4 +1,4 @@
-SOURCES = main.c common.c fairuse.c init.c radio.c design.c mission.c menu.c
+SOURCES = main.c burtle2.c common.c fairuse.c radio.c design.c mission.c menu.c test.c title.c
 
 PROGRAM = HG1
 

@@ -2,6 +2,6 @@
 #define _FAIR_USE_H_
 
 
-void disclaim_page();
+void fairuse_page();
 
 #endif

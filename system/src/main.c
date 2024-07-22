@@ -220,13 +220,26 @@ void splash()
    vera_sprites_enable(1); // cx16.h
 
    // show Jamison
-   //sprite_loadToVERA("bi-jamison.bin", 0x5000); 
-//   jamisonShow();
+   sprite_loadToVERA("bi-jamison.bin", 0x5000); 
+   jamisonShow();
 
    cputsxy(20,40, "press a key to begin");
    cgetc();
    clrscr();
    _randomize();
+}
+
+char sysmap[]  = "????????";
+char letters[] = "?abghirstw";
+
+void randomSystem() 
+{
+   int i;
+
+   for(i=0; i<strlen(sysmap); ++i)
+   {
+      sysmap[i] = (rand() % 1)? letters[rand() % 10] : ' ';
+   }
 }
 
 void run()
@@ -239,7 +252,9 @@ void run()
 
    for(;;)
    {
-      worldsShow("wwwwg");
+      //randomSystem();
+      worldsShow(sysmap); 
+      cputsxy(0,0,sysmap);
       cgetc();
    }
 }

@@ -1,7 +1,7 @@
 /*
 
     High Guard 1979: a starship construction program
-    Copyright (C) 2022 Robert Eaglestone
+    Copyright (C) 2023 Robert Eaglestone
 
     This file is part of High Guard 1.
 

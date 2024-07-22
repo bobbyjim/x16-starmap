@@ -1,15 +1,17 @@
 #ifndef _common_h_
 #define _common_h_
 
-void logo(unsigned char x, unsigned char y);
+
+#define		COMMON_COLOR   	COLOR_GRAY3
+
 
 void common_loadCharacterSet(char* name);       
-void clearMainArea();
-void redline();
-void greenline();
-void titleLine();
-void statusLine();
-void toDefaultColor();
+void common_clearMainArea();
+void common_redline();
+void common_greenline();
+void common_titleLine();
+void common_statusLine();
+void common_toDefaultColor();
 
 typedef struct 
 {
